@@ -1,26 +1,160 @@
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Digital Growth</title>
+  <meta name="theme-color" content="#1457d9">
+  <title>SMM Panel Main Provider</title>
   <style>
-    body {
-      font-family: Arial, sans-serif;
-      text-align: center;
-      padding: 60px 20px;
-      background: #101827;
-      color: white;
-    }
-    h1 { color: #ffb52e; }
-    a { color: #ffb52e; }
+    :root{--blue:#1457d9;--blue2:#0b3ea8;--light:#eef5ff;--ink:#14213d;--muted:#64748b;--white:#fff;--line:#dce6f5;--shadow:0 12px 35px rgba(24,65,135,.10)}
+    *{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;font-family:Inter,ui-sans-serif,system-ui,-apple-system,"Segoe UI",Arial,sans-serif;color:var(--ink);background:#f7faff;line-height:1.55}
+    a{color:inherit;text-decoration:none}.container{width:min(1120px,92%);margin:auto}
+    header{position:sticky;top:0;z-index:10;background:rgba(255,255,255,.94);backdrop-filter:blur(12px);border-bottom:1px solid var(--line)}
+    .nav{min-height:72px;display:flex;align-items:center;justify-content:space-between;gap:16px}.brand{display:flex;align-items:center;gap:10px;font-weight:850;letter-spacing:-.3px}.logo{width:42px;height:42px;border-radius:13px;display:grid;place-items:center;color:#fff;background:linear-gradient(135deg,var(--blue),#57a0ff);font-size:20px;box-shadow:0 7px 18px #1457d933}
+    .navlinks{display:flex;align-items:center;gap:24px;font-size:14px;font-weight:650;color:#334155}.navlinks a:hover{color:var(--blue)}
+    .btn{border:0;cursor:pointer;display:inline-flex;align-items:center;justify-content:center;gap:8px;padding:12px 18px;border-radius:12px;font-weight:750;font-size:14px;transition:.2s}
+    .btn-primary{background:var(--blue);color:#fff;box-shadow:0 8px 18px #1457d92b}.btn-primary:hover{background:var(--blue2);transform:translateY(-1px)}.btn-outline{background:#fff;color:var(--blue);border:1px solid #c9dafb}.btn-whatsapp{background:#16a34a;color:white}.btn-whatsapp:hover{background:#12813c}
+    .hero{padding:76px 0 58px;background:radial-gradient(ellipse at 80% 10%,#cfe2ff 0,transparent 38%),linear-gradient(180deg,#f1f7ff,#f7faff)}
+    .hero-grid{display:grid;grid-template-columns:1.15fr .85fr;align-items:center;gap:44px}.eyebrow{display:inline-flex;align-items:center;gap:8px;background:#e1edff;color:var(--blue2);font-size:12px;font-weight:800;padding:7px 11px;border-radius:999px;letter-spacing:.6px;text-transform:uppercase}
+    h1{font-size:clamp(36px,5vw,58px);line-height:1.08;letter-spacing:-2px;margin:18px 0}.gradient{color:var(--blue)}.hero p{font-size:17px;color:var(--muted);max-width:580px}.hero-actions{display:flex;flex-wrap:wrap;gap:12px;margin-top:26px}
+    .hero-card{background:#fff;border:1px solid #e2ebfa;border-radius:26px;padding:24px;box-shadow:var(--shadow);position:relative;overflow:hidden}.hero-card:before{content:"";position:absolute;width:180px;height:180px;background:#e6f0ff;border-radius:50%;right:-65px;top:-80px}
+    .card-top{position:relative;display:flex;align-items:center;justify-content:space-between;margin-bottom:20px}.card-top strong{font-size:17px}.live{font-size:11px;font-weight:800;color:#16803d;background:#dcfce7;padding:6px 9px;border-radius:999px}
+    .mini-service{display:flex;align-items:center;gap:13px;padding:14px 0;border-top:1px solid #edf1f8}.mini-icon{width:42px;height:42px;border-radius:13px;background:#edf4ff;display:grid;place-items:center;font-size:20px}.mini-service strong{display:block;font-size:14px}.mini-service small{color:var(--muted)}.mini-service .tag{margin-left:auto;color:var(--blue);font-weight:800;font-size:12px;background:#eff6ff;padding:6px 9px;border-radius:8px}
+    section{padding:68px 0}.section-head{text-align:center;max-width:650px;margin:0 auto 34px}.section-head .eyebrow{margin-bottom:10px}.section-head h2{font-size:clamp(28px,3vw,38px);letter-spacing:-1px;margin:8px 0}.section-head p{color:var(--muted);margin:0}
+    .services{display:grid;grid-template-columns:repeat(4,1fr);gap:18px}.service{background:#fff;border:1px solid var(--line);border-radius:18px;padding:22px;box-shadow:0 5px 20px #1e4c8a08;transition:.2s}.service:hover{transform:translateY(-4px);box-shadow:var(--shadow);border-color:#b9d0fb}.service-icon{width:50px;height:50px;border-radius:15px;background:#edf4ff;display:grid;place-items:center;font-size:24px}.service h3{margin:15px 0 5px;font-size:18px}.service p{margin:0;color:var(--muted);font-size:13px;min-height:42px}.price{margin:17px 0 14px;font-size:22px;font-weight:850;color:var(--blue)}.price small{font-size:12px;color:var(--muted);font-weight:600}.service .btn{width:100%;padding:10px}
+    .pricing-wrap{background:#edf4ff}.table-wrap{overflow-x:auto;background:white;border:1px solid var(--line);border-radius:18px;box-shadow:var(--shadow)}table{width:100%;border-collapse:collapse;min-width:520px}th,td{text-align:left;padding:17px 20px;border-bottom:1px solid #edf1f7}th{background:#f7faff;color:#52637d;font-size:12px;text-transform:uppercase;letter-spacing:.5px}td{font-size:14px}tbody tr:last-child td{border-bottom:0}.price-cell{font-weight:850;color:var(--blue)}
+    .order-grid{display:grid;grid-template-columns:.8fr 1.2fr;gap:28px;align-items:start}.order-info{background:linear-gradient(145deg,#1249b9,#2479ef);border-radius:22px;padding:28px;color:#fff}.order-info h3{font-size:25px;margin:0 0 10px}.order-info p{color:#e2edff}.order-info ul{padding-left:20px;color:#f0f6ff}.order-info li{margin:10px 0}.form-card{background:#fff;border:1px solid var(--line);border-radius:22px;padding:26px;box-shadow:var(--shadow)}.form-card h3{margin:0 0 18px;font-size:22px}.form-grid{display:grid;grid-template-columns:1fr 1fr;gap:15px}.field{display:flex;flex-direction:column;gap:7px}.field.full{grid-column:1/-1}label{font-size:13px;font-weight:750;color:#334155}input,select,textarea{width:100%;font:inherit;font-size:14px;color:var(--ink);border:1px solid #cfdaea;background:#fbfdff;border-radius:11px;padding:12px 13px;outline:none}input:focus,select:focus,textarea:focus{border-color:var(--blue);box-shadow:0 0 0 3px #1457d91a}textarea{resize:vertical;min-height:90px}.form-note{font-size:12px;color:var(--muted);margin:12px 0 16px}.form-card .btn{width:100%;padding:14px}
+    .steps{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}.step{padding:22px;border:1px solid var(--line);background:white;border-radius:16px}.step-no{width:35px;height:35px;border-radius:11px;background:#e4efff;color:var(--blue);font-weight:900;display:grid;place-items:center}.step h3{margin:13px 0 5px}.step p{margin:0;color:var(--muted);font-size:14px}
+    footer{background:#101e38;color:#dbe7fb;padding:30px 0}.footer-row{display:flex;justify-content:space-between;gap:20px;align-items:center}.footer-row small{color:#aebdd6}.footer-links{display:flex;gap:18px;font-size:13px}.disclaimer{font-size:11px;color:#9eafca;margin-top:14px;max-width:850px}
+    .float-wa{position:fixed;right:18px;bottom:18px;z-index:9;box-shadow:0 10px 25px #16a34a55;border-radius:999px}
+    @media(max-width:850px){.hero-grid,.order-grid{grid-template-columns:1fr}.hero{padding-top:52px}.hero-card{max-width:600px}.services{grid-template-columns:repeat(2,1fr)}.navlinks{gap:13px}.navlinks a:not(.btn){display:none}}
+    @media(max-width:520px){.nav{min-height:64px}.brand{font-size:13px}.logo{width:37px;height:37px}.navlinks .btn{padding:10px 12px;font-size:12px}.hero{padding:42px 0}.hero p{font-size:15px}section{padding:48px 0}.services,.steps{grid-template-columns:1fr}.service p{min-height:0}.form-grid{grid-template-columns:1fr}.field.full{grid-column:auto}.form-card,.order-info{padding:20px}.footer-row{align-items:flex-start;flex-direction:column}.hero-actions .btn{flex:1}.float-wa{right:12px;bottom:12px}}
   </style>
 </head>
 <body>
-  <h1>Digital Growth</h1>
-  <p>Fast • Secure • Reliable</p>
-  <p>Welcome to our digital world!</p>
-  <a href="https://github.com/">Powered by GitHub Pages</a>
+<header>
+  <div class="container nav">
+    <a class="brand" href="#home" aria-label="SMM Panel home"><span class="logo">S</span><span>SMM Panel <span class="gradient">Main Provider</span></span></a>
+    <nav class="navlinks" aria-label="Main navigation">
+      <a href="#services">Services</a><a href="#pricing">Pricing</a><a href="#order">Order</a>
+      <a class="btn btn-primary" href="#order">Place Order ↗</a>
+    </nav>
+  </div>
+</header>
+<main>
+  <section class="hero" id="home">
+    <div class="container hero-grid">
+      <div>
+        <span class="eyebrow">● Simple • Secure • Reliable</span>
+        <h1>Grow your social presence with <span class="gradient">smart SMM</span></h1>
+        <p>Explore social media promotion services in one place. Choose a service, check the sample pricing, and send your order details directly through WhatsApp.</p>
+        <div class="hero-actions"><a class="btn btn-primary" href="#services">Explore Services ↓</a><a class="btn btn-outline" href="#order">Order on WhatsApp ↗</a></div>
+      </div>
+      <div class="hero-card">
+        <div class="card-top"><strong>Popular Services</strong><span class="live">● ORDER VIA WHATSAPP</span></div>
+        <div class="mini-service"><span class="mini-icon">👥</span><div><strong>Facebook Followers</strong><small>Page growth service</small></div><span class="tag">Explore</span></div>
+        <div class="mini-service"><span class="mini-icon">👍</span><div><strong>Facebook Likes</strong><small>Engagement promotion</small></div><span class="tag">Explore</span></div>
+        <div class="mini-service"><span class="mini-icon">▶️</span><div><strong>Video Views</strong><small>Video visibility</small></div><span class="tag">Explore</span></div>
+        <div class="mini-service"><span class="mini-icon">💬</span><div><strong>Comments</strong><small>Post engagement</small></div><span class="tag">Explore</span></div>
+      </div>
+    </div>
+  </section>
+
+  <section id="services">
+    <div class="container">
+      <div class="section-head"><span class="eyebrow">Our Services</span><h2>Choose what you need</h2><p>Pick a service below to prefill the order form. Prices shown are editable sample prices.</p></div>
+      <div class="services">
+        <article class="service"><div class="service-icon">👥</div><h3>Followers</h3><p>Facebook page follower promotion.</p><div class="price">৳80 <small>/ 1,000 sample</small></div><button class="btn btn-primary" onclick="chooseService('Followers')">Order Followers</button></article>
+        <article class="service"><div class="service-icon">👍</div><h3>Likes</h3><p>Facebook post/page like promotion.</p><div class="price">৳60 <small>/ 1,000 sample</small></div><button class="btn btn-primary" onclick="chooseService('Likes')">Order Likes</button></article>
+        <article class="service"><div class="service-icon">▶️</div><h3>Views</h3><p>Facebook video view promotion.</p><div class="price">৳25 <small>/ 1,000 sample</small></div><button class="btn btn-primary" onclick="chooseService('Views')">Order Views</button></article>
+        <article class="service"><div class="service-icon">💬</div><h3>Comments</h3><p>Comment promotion for eligible posts.</p><div class="price">৳350 <small>/ 1,000 sample</small></div><button class="btn btn-primary" onclick="chooseService('Comments')">Order Comments</button></article>
+      </div>
+    </div>
+  </section>
+
+  <section class="pricing-wrap" id="pricing">
+    <div class="container">
+      <div class="section-head"><span class="eyebrow">Sample Price List</span><h2>Clear, simple pricing</h2><p>These are placeholders—not live supplier rates. Update them before publishing.</p></div>
+      <div class="table-wrap"><table><thead><tr><th>Service</th><th>Quantity</th><th>Sample price</th><th>Action</th></tr></thead><tbody>
+        <tr><td>Facebook Followers</td><td>1,000</td><td class="price-cell">৳80</td><td><button class="btn btn-outline" onclick="chooseService('Followers')">Select</button></td></tr>
+        <tr><td>Facebook Likes</td><td>1,000</td><td class="price-cell">৳60</td><td><button class="btn btn-outline" onclick="chooseService('Likes')">Select</button></td></tr>
+        <tr><td>Facebook Views</td><td>1,000</td><td class="price-cell">৳25</td><td><button class="btn btn-outline" onclick="chooseService('Views')">Select</button></td></tr>
+        <tr><td>Facebook Comments</td><td>1,000</td><td class="price-cell">৳350</td><td><button class="btn btn-outline" onclick="chooseService('Comments')">Select</button></td></tr>
+      </tbody></table></div>
+    </div>
+  </section>
+
+  <section id="order">
+    <div class="container">
+      <div class="section-head"><span class="eyebrow">Place an Order</span><h2>Send your order on WhatsApp</h2><p>Fill in the details and WhatsApp will open with your message ready to send.</p></div>
+      <div class="order-grid">
+        <aside class="order-info"><h3>Easy ordering, one message away.</h3><p>Submit your requested service and quantity. We’ll prepare the order details in WhatsApp for you to review.</p><ul><li>Choose a service</li><li>Enter quantity and public post/page link</li><li>Review your message before sending</li><li>Confirm price and delivery with the provider</li></ul><a class="btn btn-whatsapp" href="https://wa.me/8801966737564" target="_blank" rel="noopener">Chat on WhatsApp ↗</a></aside>
+        <form class="form-card" id="orderForm">
+          <h3>Order details</h3>
+          <div class="form-grid">
+            <div class="field"><label for="customer">Your name</label><input id="customer" name="customer" placeholder="Enter your name" required maxlength="80"></div>
+            <div class="field"><label for="service">Select service</label><select id="service" name="service" required><option value="">Choose a service</option><option>Followers</option><option>Likes</option><option>Views</option><option>Comments</option></select></div>
+            <div class="field"><label for="quantity">Quantity</label><input id="quantity" name="quantity" type="number" min="1" max="1000000" step="1" placeholder="e.g. 1000" required></div>
+            <div class="field"><label for="price">Estimated price (৳)</label><input id="price" name="price" type="text" readonly placeholder="Auto-calculated"></div>
+            <div class="field full"><label for="link">Facebook page / post / video URL</label><input id="link" name="link" type="url" placeholder="https://www.facebook.com/..." required></div>
+            <div class="field full"><label for="notes">Additional notes (optional)</label><textarea id="notes" name="notes" maxlength="500" placeholder="Any details about your order"></textarea></div>
+          </div>
+          <p class="form-note">Sample prices are used for estimates. No payment is collected on this website. Never share your Facebook password or login code.</p>
+          <button class="btn btn-whatsapp" type="submit">Send Order via WhatsApp ↗</button>
+        </form>
+      </div>
+    </div>
+  </section>
+
+  <section>
+    <div class="container">
+      <div class="section-head"><span class="eyebrow">How it works</span><h2>Order in 3 easy steps</h2></div>
+      <div class="steps"><article class="step"><div class="step-no">1</div><h3>Choose a service</h3><p>Pick Followers, Likes, Views, or Comments and enter the quantity.</p></article><article class="step"><div class="step-no">2</div><h3>Send your details</h3><p>Submit the form to open WhatsApp with your order message.</p></article><article class="step"><div class="step-no">3</div><h3>Confirm with us</h3><p>Check the final price, service terms, and expected delivery before paying.</p></article></div>
+    </div>
+  </section>
+</main>
+<footer><div class="container"><div class="footer-row"><div><a class="brand" href="#home"><span class="logo">S</span><span>SMM Panel Main Provider</span></a><small>Fast • Secure • Reliable</small></div><div class="footer-links"><a href="#services">Services</a><a href="#pricing">Pricing</a><a href="#order">Contact</a></div></div><p class="disclaimer">Independent service website. This site is not affiliated with or endorsed by Meta or Facebook. Service availability and results may vary. Follow each platform’s terms and applicable laws.</p></div></footer>
+<a class="btn btn-whatsapp float-wa" href="https://wa.me/8801966737564?text=Hello%2C%20I%20want%20to%20ask%20about%20SMM%20services." target="_blank" rel="noopener" aria-label="Chat on WhatsApp">☏ WhatsApp</a>
+<script>
+  // Edit these sample prices to match your actual rates (BDT per 1,000).
+  const prices = { Followers: 80, Likes: 60, Views: 25, Comments: 350 };
+  const serviceInput = document.getElementById('service');
+  const quantityInput = document.getElementById('quantity');
+  const priceInput = document.getElementById('price');
+  function updatePrice(){
+    const service = serviceInput.value;
+    const quantity = Number(quantityInput.value);
+    if(service && prices[service] && Number.isFinite(quantity) && quantity > 0){
+      priceInput.value = '৳' + (prices[service] * quantity / 1000).toLocaleString('en-BD',{maximumFractionDigits:2});
+    } else { priceInput.value = ''; }
+  }
+  function chooseService(service){
+    serviceInput.value = service;
+    if(!quantityInput.value) quantityInput.value = 1000;
+    updatePrice();
+    document.getElementById('order').scrollIntoView({behavior:'smooth'});
+    setTimeout(()=>quantityInput.focus({preventScroll:true}),350);
+  }
+  serviceInput.addEventListener('change',updatePrice);
+  quantityInput.addEventListener('input',updatePrice);
+  document.getElementById('orderForm').addEventListener('submit',function(event){
+    event.preventDefault();
+    if(!this.reportValidity()) return;
+    const data = new FormData(this);
+    const message = [
+      'Hello SMM Panel Main Provider, I want to place an order.',
+      '',
+      'Name: ' + data.get('customer'),
+      'Service: Facebook ' + data.get('service'),
+      'Quantity: ' + data.get('quantity'),
+      'Estimated price: ' + (data.get('price') || 'Please confirm'),
+      'Link: ' + data.get('link'),
+      'Notes: ' + (data.get('notes') || 'None'),
+      '',
+      'Please confirm availability, final price, and delivery time.'
+    ].join('\n');
+    window.open('https://wa.me/8801966737564?text=' + encodeURIComponent(message),'_blank','noopener');
+  });
+</script>
 </body>
 </html>
